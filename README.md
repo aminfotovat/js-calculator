@@ -37,3 +37,9 @@ A simple calculator built with JavaScript, HTML, and CSS, available in both desk
 ---
 
 Made with ❤️ and JavaScript
+
+## Desktop Version Preview
+https://files.aminfotovat.ir/Calculator/Desktop/
+
+## Mobile Version Preview
+https://files.aminfotovat.ir/Calculator/Mobile/

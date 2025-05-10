@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Calculator
+        </title>
+<!--        <link rel="stylesheet" href="css/style.css"/>-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <style>
+        @font-face {
+            font-family: 'DS-Digital Bold Italic';
+            font-style: normal;
+            font-weight: normal;
+            src:  url('DS-DIGIT.woff') format('woff');
+        }
+        @font-face {
+            font-family: Barlow;
+            src: local('KalamRegular'), url('barlow-semi-condensed.regular.ttf') format('truetype');
+        }
+        body{
+            direction: ltr;
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+        .body{
+            padding: 15px 10px 10px 10px ;
+            width: 300px;
+            height: 365px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Barlow;
+            border: 1px solid white;
+            border-radius: 10px;
+            background: rgb(32, 32, 32);
+        }
+        .monitor{
+
+            height: 50px;
+            padding: 0;
+            width: 100%;
+            background: rgb(32, 32, 32);
+            display: flex;
+            justify-content: center;
+
+
+        }
+        .button{
+            width: calc(100% - 20px);
+            height: auto;
+            background: rgb(32, 32, 32);
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .button > div{
+            display: flex;
+            justify-content: left;
+            flex-direction: row;
+        }
+        .button > div div{
+            margin: 5px;
+            width: 33%;
+            padding: 18px 0;
+            font-size: 30px;
+            background: rgb(59, 59, 59);
+            height: 30px;
+            text-align: center;
+            color: white;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all linear 0.1s;
+            box-shadow: 1px 1px 6px black;
+        }
+
+        /*........................................................................*/
+        #monitor{
+            font-family: 'DS-Digital Bold Italic';
+            width: calc(90% - 10px);
+            height: 100%;
+            font-size: 30px;
+            display: inline-block;
+            margin: 0;
+            color: white;
+            padding: 0 5px;
+            background: transparent;
+            outline: none;
+
+            border: 1px solid rgba(256,256,256,0.4);
+        }
+        #cross,#sub,#sum,#divide{
+            background: rgb(50, 50, 50);
+
+        }
+        #cross:hover{
+            background: rgb(59, 59, 59);
+
+        }
+        #sub:hover{
+            background: rgb(59, 59, 59);
+
+        }
+        #sum:hover{
+            background: rgb(59, 59, 59);
+
+        }
+        #divide:hover{
+            background: rgb(59, 59, 59);
+
+        }
+        #cross:active{
+            background: rgb(50, 50, 50);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #sub:active{
+            background: rgb(50, 50, 50);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #sum:active{
+            background: rgb(50, 50, 50);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #divide:active{
+            background: rgb(50, 50, 50);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #equal{
+            background: rgb(219, 175, 179);
+
+        }
+        #equal:hover{
+            background: rgb(170, 137, 139);
+
+        }
+        #equal:active{
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #c{
+            background: rgb(254, 64, 64);
+            box-shadow: 1px 1px 6px black;
+        }
+        #c:hover{
+            background: rgb(202, 52, 52);
+        }
+        #c:active{
+            background: rgb(254, 64, 64);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        /* number*/
+        #num0:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num1:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num2:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num3:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num4:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num5:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num6:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num7:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num8:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num9:hover{
+            background: rgb(50, 50, 50);
+        }
+        #num0:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num1:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num2:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num3:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num4:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num5:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num6:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num7:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num8:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+        #num9:active{
+            background: rgb(59, 59, 59);
+            box-shadow: inset 0px 1px 6px 0px rgb(0, 0, 0);
+        }
+    </style>
+    <body>
+        <div class="body">
+            <div class="monitor">
+                <input type="text" placeholder="0" id="monitor"  maxlength="15"/>
+            </div>
+
+            <div class="button">
+                <div>
+                    <div id="num7" onclick="numbers(7)">7</div>
+                    <div id="num8" onclick="numbers(8)">8</div>
+                    <div id="num9" onclick="numbers(9)">9</div>
+                    <div id="cross" onclick="action('*')">*</div>
+                </div>
+                <div>
+                    <div id="num4" onclick="numbers(4)">4</div>
+                    <div id="num5" onclick="numbers(5)">5</div>
+                    <div id="num6" onclick="numbers(6)">6</div>
+                    <div id="sub" onclick="action('-')">-</div>
+                </div>
+                <div>
+                    <div id="num1" onclick="numbers(1)">1</div>
+                    <div id="num2" onclick="numbers(2)">2</div>
+                    <div id="num3" onclick="numbers(3)">3</div>
+                    <div id="sum" onclick="action('+')">+</div>
+                </div>
+                <div>
+                    <div id="c" onclick="clr()">AC</div>
+                    <div id="num0" onclick="numbers(0)">0</div>
+                    <div id="divide" onclick="action('/')">/</div>
+                    <div id="equal" onclick="equal('=')">=</div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    <script>
+        // this function just get number
+        function numbers(a){
+            var num1= document.getElementById("monitor").value+=a;
+        }
+
+        // this function just act
+        function action(b) {
+            var act = document.getElementById("monitor").value += b;
+        }
+
+        // this is equal button
+        function equal(){
+            var result =document.getElementById("monitor").value;
+            var output=document.getElementById("monitor").value= eval(result)
+        }
+        //  AC button
+        function clr(){
+            document.getElementById("monitor").value=''
+        }
+
+
+    </script>
+    </body>
+</html>

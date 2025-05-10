@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Calculator
+        </title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+        <div class="body">
+            <div class="monitor">
+                    <input type="text" placeholder="0" id="monitor"  maxlength=15"/>
+            </div>
+
+            <div class="button">
+                <div>
+                    <div id="num7" onclick="numbers(7)">7</div>
+                    <div id="num8" onclick="numbers(8)">8</div>
+                    <div id="num9" onclick="numbers(9)">9</div>
+                    <div id="cross" onclick="numbers('*')">*</div>
+                </div>
+                <div>
+                    <div id="num4" onclick="numbers(4)">4</div>
+                    <div id="num5" onclick="numbers(5)">5</div>
+                    <div id="num6" onclick="numbers(6)">6</div>
+                    <div id="sub" onclick="numbers('-')">-</div>
+                </div>
+                <div>
+                    <div id="num1" onclick="numbers(1)">1</div>
+                    <div id="num2" onclick="numbers(2)">2</div>
+                    <div id="num3" onclick="numbers(3)">3</div>
+                    <div id="sum" onclick="numbers('+')">+</div>
+                </div>
+                <div>
+                    <div id="c" onclick="clr()">C</div>
+                    <div id="num0" onclick="numbers(0)">0</div>
+                    <div id="divide" onclick="numbers('/')">/</div>
+                    <div id="equal" onclick="equal('=')">=</div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <script src="javascript/script.js">
+    </script>
+    </body>
+</html>

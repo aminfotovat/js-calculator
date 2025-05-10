@@ -34,10 +34,6 @@ A simple calculator built with JavaScript, HTML, and CSS, available in both desk
 1. ⬇️ Download the project files
 2. 🌐 Open `index.html` in your browser
 
-## 🤝 Contributing
-
-If you'd like to contribute to this project, please submit a Pull Request.
-
 ---
 
 Made with ❤️ and JavaScript
